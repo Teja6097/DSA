@@ -75,6 +75,31 @@ public class Linkedlist
 		return c;
 	}
 	
+	public void search(int key)
+	{
+		int flag=0,index=0;
+		Node curr =head;
+		while(curr!=null)
+		{
+			if(curr.data==key)
+			{
+				flag=1;
+				break;
+			}
+			curr=curr.next;
+			index++;
+		}
+		if(flag==1)
+		{
+			System.out.println("key found at "+ index);
+		}
+		else
+		{
+			System.out.println("key not found");
+		}
+		
+	}
+	
 	
 	public void printlist()
 	{
@@ -85,6 +110,7 @@ public class Linkedlist
 			 n=n.next;
 		}
 	}
+	
 
 	public static void main(String[] args) 
 	{
@@ -116,6 +142,8 @@ public class Linkedlist
 		System.out.println("\nlength of linked list");
 		int x= llist.count();
 		System.out.println(x);
+		
+		llist.search(6);
 	}
 
 }
